@@ -1,0 +1,17 @@
+<div>
+  <mat-form-field>
+    <mat-label>Search by description</mat-label>
+    <input matInput [(ngModel)]="filterDescription">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="addImage()">Add Image</button>
+</div>
+
+<mat-grid-list cols="3" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let image of filteredImages" (click)="openDialog(image)">
+    <img src="{{image.src}}" alt="{{image.description}}">
+    <mat-grid-tile-footer>
+      <h3>{{ image.description }}</h3>
+    </mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>
