@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import {ImageDialogComponent} from '../image-dialog/image-dialog.component';
+import {CommonModule} from '@angular/common';
 
 interface Image {
   src: string;
@@ -21,15 +22,17 @@ interface Image {
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    ImageDialogComponent,
+    CommonModule
   ],
   templateUrl: './galeria.component.html',
   styleUrls: ['./galeria.component.css']
 })
 export class GaleriaComponent {
   images: Image[] = [
-    { src: 'assets/images/image1.jpg', description: 'Image 1' },
-    { src: 'assets/images/image2.jpg', description: 'Image 2' }
+    { src: 'https://marketing4ecommerce.net/wp-content/uploads/2024/02/ias-generadoras-de-imagenes.jpg', description: 'Image 1' },
+    { src: 'https://ethic.es/wp-content/uploads/2023/03/imagen.jpg', description: 'Image 2' }
   ];
   filterDescription: string = '';
 
